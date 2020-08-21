@@ -1,16 +1,15 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Card } from "react-bootstrap"
-import sampleImage from "../images/gatsby-astronaut.png"
 
-function BlogItem() {
+function BlogItem({ title, date, src, link }) {
   return (
     <Card className="mt-4">
-      <Card.Img variant="top" src={sampleImage} />
+      <Card.Img variant="top" src={src} />
       <Card.Body>
-        <Card.Title>ブログタイトル</Card.Title>
-        <Card.Text>2020/04/11</Card.Text>
-        <Link to="">see more</Link>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>{date}</Card.Text>
+        <Link to={`/${link}`}>see more</Link>
       </Card.Body>
     </Card>
   )
